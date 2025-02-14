@@ -1,19 +1,22 @@
 {
-  "dependencies": {
-    "express": "^4.21.2"
-  },
   "name": "git-one",
   "version": "1.0.0",
   "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
   "devDependencies": {
     "eslint": "^9.20.1",
     "globals": "^15.15.0",
     "typescript-eslint": "^8.24.0"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "lint": "eslint"
+  "engines": {
+    "node": ">=16"
   },
   "keywords": [],
   "author": "",

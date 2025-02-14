@@ -1,11 +1,9 @@
-import globals from "globals";
-import tseslint from "typescript-eslint";
+import globals from 'globals';
+import typeScriptEslint from 'typescript-eslint'; // Atenção: esse pacote não é o padrão da comunidade
 
-
-/** @type {import('eslint').Linter.Config[]} */
-export default [
-  {files: ["**/*.{js,mjs,cjs,ts}"]},
-  {files: ["**/*.js"], languageOptions: {sourceType: "script"}},
-  {languageOptions: { globals: globals.browser }},
-  ...tseslint.configs.recommended,
-];
+export default {
+  files: ['**/*.js'],
+  languageOptions: {
+    sourceType: 'script'
+  }
+};
