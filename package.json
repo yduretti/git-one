@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "prettier": "npx prettier . --check"
   },
   "dependencies": {
     "express": "^4.21.2",
