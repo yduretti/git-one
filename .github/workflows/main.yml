@@ -22,3 +22,7 @@ jobs:
 
       - name: Run Linter
         run: npm run lint -s
+
+      - name: Format (Prettier)
+        run: npm run prettier -s
+
