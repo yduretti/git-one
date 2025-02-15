@@ -25,6 +25,7 @@ jobs:
       - name: Format (Prettier)
         run: npm run prettier -s
 
+
       - name: Test (Jest) CI=true
         run: npm run test
 
