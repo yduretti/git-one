@@ -6,6 +6,7 @@ on:
 
 jobs:
   
+  
   build:
     runs-on: ubuntu-latest
     steps:
@@ -34,6 +35,7 @@ jobs:
 
   Docker:
 
+    needs: build
     runs-on: ubuntu-latest
     steps:  
 
@@ -42,5 +44,6 @@ jobs:
 
       - name: Build Docker Image
         run: docker build -t yduretti/gitnode:latest .
+        
       - name: Push Docker Image
         run: docker push yduretti/gitnode:latest
