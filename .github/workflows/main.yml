@@ -5,6 +5,7 @@ on:
     branches: [main]
 
 jobs:
+  
   build:
     runs-on: ubuntu-latest
     steps:
@@ -25,13 +26,16 @@ jobs:
       - name: Format (Prettier)
         run: npm run prettier -s
 
-
-
       - name: Test (Jest) CI=true
         run: npm run test
 
       - name: Build
         run:  npm run build
+
+    Docker:
+
+      runs-on: ubuntu-latest
+      steps:  
 
       - name: Docker Login
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
