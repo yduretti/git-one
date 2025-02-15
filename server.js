@@ -1,8 +1,16 @@
 const express = require("express");
+const os = require('os');
+
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("<h1>Hello YD</h1>");
+    
+  const mySecret = process.env.MY_SECRET;
+  console.log('The secret is:', mySecret);
+
+  let resultado = "<h1 >Hello YD </h1><br><h2> secret: " + mySecret + " </h2><br> hostname: " + os.hostname()
+  res.send(resultado);
+  //res.json({ "celsius": celsius, "maquina": os.hostname() });
 });
 
 app.listen(3000, () => {
