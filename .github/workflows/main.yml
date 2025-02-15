@@ -33,6 +33,9 @@ jobs:
       - name: Build
         run:  npm run build
 
+      - name: Build Docker Image
+        run: docker build -t yduretti/gitnode:latest .
+
   Docker:
 
     needs: build
@@ -41,9 +44,6 @@ jobs:
 
       - name: Docker Login
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-
-      - name: Build Docker Image
-        run: docker build -t yduretti/gitnode:latest .
         
       - name: Push Docker Image
         run: docker push yduretti/gitnode:latest
