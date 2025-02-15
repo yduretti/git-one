@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: git-node
+  namespace: production
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: git-node
+  template:
+    metadata:
+      labels:
+        app: git-node
+    spec:
+      containers:
+      - name: gitnode-container
+        image: yduretti/gitnode:latest # Ensure this matches your Docker image
+        ports:
+        - name: http
+          containerPort: 3000
+          protocol: TCP
+        env:
+        - name: MY_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: MY_SECRET
