@@ -17,9 +17,8 @@ spec:
       - name: gitnode-container
         image: yduretti/gitnode:latest # Ensure this matches your Docker image
         ports:
-        - name: http
-          containerPort: 3000
-          protocol: TCP
+          - containerPort: 3000      
+        imagePullPolicy: Always
         env:
         - name: MY_SECRET
           valueFrom:

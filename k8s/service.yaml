@@ -4,11 +4,11 @@ metadata:
   name: git-node-service
   namespace: production
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: git-node
   ports:
-    - protocol: TCP
-      port: 80
+    - name: http
+      port: 8080
       targetPort: 3000
-      nodePort: 30036
+      protocol: TCP
